@@ -1,0 +1,10 @@
+jenkins:
+  restart: always
+  image: 10.8.0.18/jenkins
+  environment:
+    JENKINS_OPTS: --prefix=/jenkins
+  ports:
+    - 8080:8080
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /jenkins:/var/jenkins_home
